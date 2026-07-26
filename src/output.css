@@ -1,4 +1,4 @@
-/*! tailwindcss v4.3.2 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -9,8 +9,6 @@
       "Courier New", monospace;
     --color-white: #fff;
     --spacing: 0.25rem;
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-3xl: 1.875rem;
@@ -18,7 +16,7 @@
     --font-weight-semibold: 600;
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
-    --radius-2xl: 1rem;
+    --radius-lg: 0.5rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -178,26 +176,17 @@
   .mx-auto {
     margin-inline: auto;
   }
-  .my-\[10\] {
-    margin-block: 10;
+  .my-3 {
+    margin-block: calc(var(--spacing) * 3);
   }
-  .my-\[10p\] {
-    margin-block: 10p;
+  .mt-25 {
+    margin-top: calc(var(--spacing) * 25);
   }
-  .my-\[10px\] {
-    margin-block: 10px;
+  .mb-13 {
+    margin-bottom: calc(var(--spacing) * 13);
   }
-  .mt-\[100px\] {
-    margin-top: 100px;
-  }
-  .mb-\[50\] {
-    margin-bottom: 50;
-  }
-  .mb-\[50px\] {
-    margin-bottom: 50px;
-  }
-  .mb-\[100px\] {
-    margin-bottom: 100px;
+  .mb-25 {
+    margin-bottom: calc(var(--spacing) * 25);
   }
   .block {
     display: block;
@@ -205,110 +194,56 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .hidden {
     display: none;
-  }
-  .table {
-    display: table;
-  }
-  .h-6 {
-    height: calc(var(--spacing) * 6);
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
   }
-  .h-\[8\] {
-    height: 8;
-  }
-  .h-\[80\] {
-    height: 80;
-  }
-  .h-\[80p\] {
-    height: 80p;
-  }
-  .h-\[80px\] {
-    height: 80px;
-  }
-  .h-\[100\%\] {
-    height: 100%;
-  }
-  .h-\[100\] {
-    height: 100;
+  .h-\[230px\] {
+    height: 230px;
   }
   .h-full {
     height: 100%;
   }
-  .w-3 {
-    width: calc(var(--spacing) * 3);
-  }
-  .w-\[7\] {
-    width: 7;
-  }
-  .w-\[9\] {
-    width: 9;
-  }
-  .w-\[70\%\] {
-    width: 70%;
-  }
-  .w-\[70\] {
-    width: 70;
+  .w-4\/5 {
+    width: calc(4 / 5 * 100%);
   }
   .w-\[90\%\] {
     width: 90%;
   }
-  .w-\[90\] {
-    width: 90;
-  }
-  .max-w-2 {
-    max-width: calc(var(--spacing) * 2);
+  .w-full {
+    width: 100%;
   }
   .max-w-150 {
     max-width: calc(var(--spacing) * 150);
   }
-  .max-w-\[600\] {
-    max-width: 600;
-  }
-  .max-w-\[600px\] {
-    max-width: 600px;
-  }
   .flex-1 {
     flex: 1;
-  }
-  .flex-2 {
-    flex: 2;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .cursor-pointer {
     cursor: pointer;
   }
-  .resize {
-    resize: both;
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .items-center {
     align-items: center;
   }
-  .rounded-2xl {
-    border-radius: var(--radius-2xl);
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  .rounded-\[5px\] {
+    border-radius: 5px;
   }
   .rounded-md {
     border-radius: var(--radius-md);
   }
   .rounded-sm {
     border-radius: var(--radius-sm);
-  }
-  .rounded-s {
-    border-start-start-radius: 0.25rem;
-    border-end-start-radius: 0.25rem;
-  }
-  .rounded-s-md {
-    border-start-start-radius: var(--radius-md);
-    border-end-start-radius: var(--radius-md);
-  }
-  .rounded-r-2xl {
-    border-top-right-radius: var(--radius-2xl);
-    border-bottom-right-radius: var(--radius-2xl);
   }
   .rounded-r-sm {
     border-top-right-radius: var(--radius-sm);
@@ -322,45 +257,23 @@
     border-style: var(--tw-border-style);
     border-width: 0px;
   }
-  .border-r {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
-  .bg-\[\#39\] {
-    background-color: #39;
-  }
-  .bg-\[\#434\] {
-    background-color: #434;
-  }
-  .bg-\[\#3929\] {
-    background-color: #3929;
-  }
   .bg-\[\#39297b\] {
     background-color: #39297b;
-  }
-  .bg-\[\#43498\] {
-    background-color: #43498;
   }
   .bg-\[\#434989\] {
     background-color: #434989;
   }
-  .bg-\[\#\] {
-    background-color: #;
-  }
   .bg-\[\#ff3929\] {
     background-color: #ff3929;
-  }
-  .bg-\[\#ff\] {
-    background-color: #ff;
   }
   .bg-transparent {
     background-color: transparent;
   }
-  .px-0 {
-    padding-inline: 0;
+  .object-cover {
+    object-fit: cover;
   }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
+  .px-5 {
+    padding-inline: calc(var(--spacing) * 5);
   }
   .px-8 {
     padding-inline: calc(var(--spacing) * 8);
@@ -368,20 +281,11 @@
   .px-30 {
     padding-inline: calc(var(--spacing) * 30);
   }
-  .px-\[20px\] {
-    padding-inline: 20px;
-  }
-  .px-\[30px\] {
-    padding-inline: 30px;
-  }
   .py-0 {
-    padding-block: 0;
+    padding-block: 0px;
   }
-  .py-30 {
-    padding-block: calc(var(--spacing) * 30);
-  }
-  .py-\[10px\] {
-    padding-block: 10px;
+  .py-3 {
+    padding-block: calc(var(--spacing) * 3);
   }
   .text-center {
     text-align: center;
@@ -394,38 +298,12 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
-  .text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-  }
-  .text-\[18px\] {
-    font-size: 18px;
-  }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
-  .text-\[\#\] {
-    color: #;
-  }
-  .text-\[\#fff\] {
-    color: #fff;
-  }
-  .text-\[18\] {
-    color: 18;
-  }
-  .text-\[18p\] {
-    color: 18p;
-  }
   .text-white {
     color: var(--color-white);
-  }
-  .underline {
-    text-decoration-line: underline;
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .outline-0 {
     outline-style: var(--tw-outline-style);
@@ -435,10 +313,8 @@
     --tw-outline-style: none;
     outline-style: none;
   }
-  .placeholder\:text-white {
-    &::placeholder {
-      color: var(--color-white);
-    }
+  .placeholder\:text-white::placeholder {
+    color: var(--color-white);
   }
 }
 @property --tw-border-style {
