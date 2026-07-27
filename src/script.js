@@ -9,7 +9,8 @@ let keyWord ="";
 let page = 1;
 async function searchImages() {
     //keyWord =searchbox.value ;
-    const url =`https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${accessKey}&per_page=12`;
+    try {
+         const url =`https://api.unsplash.com/search/photos?page=${page}&query=${keyWord}&client_id=${accessKey}&per_page=12`;
     const res = await fetch(url);
     const data =await res.json();
     if(page === 1){
@@ -39,6 +40,12 @@ async function searchImages() {
 
     });
     showMoreBtn.style.display ="block";
+        
+    } catch (error) {
+        console.log(error);
+    }
+    
+   
 
     searchbox.value = "";
 
